@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
     var Letterset = sequelize.define("Letterset", {
-        characters: DataTypes.STRING
+        letterset: DataTypes.STRING
         
     });
 
@@ -8,9 +8,9 @@ module.exports = function(sequelize, DataTypes) {
         // Associating Letterset with Letterset
         Letterset.hasMany(models.Score, {
            // Not sure if needed
-            foreignKey: {
-                allowNull: false
-            }
+            // foreignKey: {
+            //     allowNull: false
+            // }
         })
       };
     return Letterset;
