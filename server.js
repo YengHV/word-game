@@ -13,12 +13,19 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Routes
-// const apiRoutes = require("./controllers/chirpController.js")
+app.use(require('./controllers/userController.js'));
+app.use(require('./controllers/scoreController.js'));
+app.use(require('./controllers/lettersetController.js'));
+
+// use this syntax if there is only one route
+// const apiRoutes = require("./controllers/userController.js")
+// const apiRoutes = require("./controllers/scoreController.js")
+// const apiRoutes = require("./controllers/lettersetController.js")
 
 // app.use(apiRoutes);
 
-// Starts the server to begin listening
-db.sequelize.sync().then(function() {
+// Starts the server to begin listening, force true means drop database
+db.sequelize.sync({force: false}).then(function() {
     app.listen(PORT, function() {
       console.log("App listening on PORT " + PORT);
     });
