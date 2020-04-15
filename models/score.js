@@ -4,7 +4,7 @@ module.exports = function(sequelize, DataTypes) {
     });
 
     Score.associate = function(models) {
-        //Associating Score with Letterset
+        //Associate Score with User
         Score.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false
@@ -16,22 +16,6 @@ module.exports = function(sequelize, DataTypes) {
             }
         })
       };
-
-    Score.create({
-        score: 55,
-    });
-
-    Score.create({
-        score: 42
-    });
-
-    Score.create({
-        score: 26
-    });
-
-    Score.create({
-        score: 88
-    });
 
     return Score;
 };

@@ -13,9 +13,9 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Routes
-// const apiRoutes = require("./controllers/chirpController.js")
+ const apiRoutes = require("./controllers/userController.js")
 
-// app.use(apiRoutes);
+app.use(apiRoutes);
 
 // Starts the server to begin listening, force true means drop database
 db.sequelize.sync({force: false}).then(function() {
