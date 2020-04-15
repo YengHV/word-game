@@ -2,26 +2,28 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 
-// router.get('/api/users', (req, res) => {
-//   db.User.findAll({
-//     // INNER JOIN on scores
-//     //include: [db.Score]
-//   })
-//   .then(results => res.json(results))
-//   .catch(error => res.json(error))
-// });
+router.get('/api/scores', (req, res) => {
+  db.Score.findAll({
+    // INNER JOIN on both
+      include: [db.User],
+      include: [db.Letterset]
+  })
+  .then(results => res.json(results))
+  .catch(error => res.json(error))
+});
 
-// router.get('/api/user/:id', (req, res) => {
-//   db.User.findAll({
-//     where: {
-//       id: req.params.id
-//     },
-//     // INNER JOIN on 
-//    // include: [db.Book]
-//   })
-//   .then(results => res.json(results))
-//   .catch(error => res.json(error))
-// });
+router.get('/api/score/:id', (req, res) => {
+  db.Score.findAll({
+    where: {
+      id: req.params.id
+    },
+    // INNER JOIN on both
+      include: [db.User],
+      include: [db.Letterset]
+  })
+  .then(results => res.json(results))
+  .catch(error => res.json(error))
+});
 
 router.post('/api/score', (req, res) => {
   // I uncommented this with Erik
