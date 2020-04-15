@@ -17,8 +17,8 @@ app.use(express.static("public"));
 
 // app.use(apiRoutes);
 
-// Starts the server to begin listening
-db.sequelize.sync().then(function() {
+// Starts the server to begin listening, force true means drop database
+db.sequelize.sync({force: false}).then(function() {
     app.listen(PORT, function() {
       console.log("App listening on PORT " + PORT);
     });
