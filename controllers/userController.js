@@ -11,13 +11,13 @@ router.get('/api/users', (req, res) => {
   .catch(error => res.json(error))
 });
 
-router.get('/api/user/:id', (req, res) => {
-  db.User.findAll({
+router.post('/api/login', (req, res) => {
+  db.User.findOne({
     where: {
-      id: req.params.id
+      email: req.body.email,
+      password: req.body.password
     },
-    // INNER JOIN on 
-   // include: [db.Book]
+  
   })
   .then(results => res.json(results))
   .catch(error => res.json(error))

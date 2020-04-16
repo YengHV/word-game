@@ -16,6 +16,7 @@ app.use(express.static("public"));
 app.use(require('./controllers/userController.js'));
 app.use(require('./controllers/scoreController.js'));
 app.use(require('./controllers/lettersetController.js'));
+app.use(require('./controllers/htmlController.js'));
 
 // use this syntax if there is only one route
 // const apiRoutes = require("./controllers/userController.js")
