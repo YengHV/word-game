@@ -1,5 +1,6 @@
 var express = require("express");
 var db = require("./models");
+
 // Sets up the Express App
 
 var app = express();

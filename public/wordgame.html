@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <!-- <link rel="stylesheet" href="style.css"> -->
   <title>Word Game</title>
 </head>
@@ -13,7 +13,7 @@
   </div>
   <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Pick Letterset
+      Dropdown button
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
       <a class="dropdown-item" href="#">Action</a>
@@ -22,21 +22,28 @@
     </div>
   </div>
   <!-- Correct Word List -->
-  <div class="form-group">
-    <label for=""></label>
-    <textarea class="form-control" name="" id="" rows="3"></textarea>
-  </div>
+  <div>
+    <div class="correctwords">Correct Words</div>
+    <ul>
+    <li>blast</li>
+      <li>rats</li>
+      <li>stars</li>
+    </ul>
+</div>
   <!-- Current Letterset -->
-  <div class="form-group">
-    <label for=""></label>
-    <textarea class="form-control" name="" id="" rows="1"></textarea>
+  <div id = "letterset">
+    <p>Current letterset: blatsro</p>
   </div>
-  <!-- Working Area -->
-  <div class="form-group">
+  <!-- Word Guess Area -->
+  <div >
     <label for=""></label>
-    <textarea class="form-control" name="" id="" rows="1"></textarea>
+    <textarea class="form-control" name="" id="wordguess" rows="1"></textarea>
   </div>
-  <button type="submit" class="btn btn-primary">Submit Word</button>
+  <button type="submit" class="btn btn-primary" id="submitBtn">Submit Word</button>
   <button type="submit" class="btn btn-primary">Done</button>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
 </body>
 </html>
