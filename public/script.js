@@ -13,7 +13,7 @@ $(document).ready(function () {
 
 function wordCheck(){
   //queryURL="https://dictionaryapi.com/api/v3/references/collegiate/json/" + str + "?key=" + apikey
-  queryURL="https://dictionaryapi.com/api/v3/references/collegiate/json/" + str + "?key="
+  queryURL="https://dictionaryapi.com/api/v3/references/collegiate/json/" + str + "?key=fba3eaa7-5e9a-4a87-9890-15a9eb49b6bc";
   $.ajax ({
     url: queryURL,
     method: "GET",
