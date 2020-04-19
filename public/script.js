@@ -1,6 +1,8 @@
 //require("dotenv").config();
 //const apikey = process.env.API_KEY;
 var str = "";
+// var arrBlastro = [];
+
 $(document).ready(function () {
   $("#submitBtn").on("click", function () {
     str = $("#wordguess").val();
@@ -17,19 +19,22 @@ $(document).ready(function () {
       // dynamically create Bootstrap buttons using jQuery
       // iterate around the letterset
         var blastro = "blastro";
-      for (let i = 0; i < blastro.length; i++) {
+      for (var i = 0; i < blastro.length; i++) {
         var arrBlastro = blastro[i]; 
         console.log(arrBlastro);
         var charDiv = $("#charDiv");
         var charBtn = $("<button>").attr("id", "btnId" + arrBlastro).attr("type", "button").attr("class", "btn btn-secondary").text(arrBlastro);
         $(charDiv).append(charBtn);
+
+        createWordGuess();
+        function createWordGuess(){
+          $("#btnId" + arrBlastro[i]).on("click", function () {
+            console.log("#btnId" + arrBlastro);
+          })
+        }
       }
   });
-  
-  // have a for loop to iterate around the string
-  // dynamically have jQuery create button for each letter
-
-  //end of document ready function  
+//end of document ready function  
 });
 
 function wordCheck() {
@@ -52,6 +57,9 @@ function wordCheck() {
     return alert("Sorry, " + str + " not in this dictionary.");
   })
 }
+
+
+
 
 // function validWord({
 //   // add currentWord to div
