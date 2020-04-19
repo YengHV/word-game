@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>Word Game</title>
   </head>
@@ -19,28 +19,32 @@
       Choose a letterset
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">blatsro</a>
-      <a class="dropdown-item" href="#">ahpenmo</a>
-      <a class="dropdown-item" href="#">phemais</a>
+      <a class="dropdown-item" href="#" id="blastro">blastro</a>
+      <!-- <a class="dropdown-item" href="#">ahpenmo</a>
+      <a class="dropdown-item" href="#">phemais</a> -->
     </div>
   </div>
   <!-- Correct Word List -->
   <div>
     <div class="correctwords">Correct Words</div>
     <ul>
-    <li>blast</li>
+      <li>blast</li>
       <li>rats</li>
       <li>stars</li>
     </ul>
 </div>
+<div class="btn-group" role="group" aria-label="Basic example" id = "charDiv">
+</div>
   <!-- Current Letterset -->
   <div id = "letterset">
-    <p>Current letterset: blatsro</p>
+    <p >Current Letterset: 
+      <span id = "currentLetterset"></span></p>
+    
   </div>
   <!-- Word Guess Area -->
   <div >
     <label for=""></label>
-    <textarea class="form-control" name="" id="wordguess" rows="1"></textarea>
+    <textarea class="form-control" name="" id="wordguess" rows="1">this is some text</textarea>
   </div>
   <button type="submit" class="btn btn-primary" id="submitBtn">Submit Word</button>
   <button type="submit" class="btn btn-primary">Done</button>
