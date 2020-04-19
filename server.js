@@ -1,5 +1,8 @@
 var express = require("express");
 var db = require("./models");
+// needed to hide API key for local environment
+// require('dotenv').config();
+
 // Sets up the Express App
 
 var app = express();
