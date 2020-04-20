@@ -1,0 +1,36 @@
+#body {
+    text-align: center;
+}
+
+.headerOne {
+    /* text-align: center; */
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.dropdown-style {
+    /* text-align: center; */
+    padding-bottom: 20px;
+}
+
+#correctwords {
+    padding-bottom: 10px;
+}
+
+#charDiv {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+ul {
+    text-align: center;
+    display: inline-block;
+    /* text-align: left; */
+    /* list-style-type: none; */
+    /* list-style: inside; */
+}
+
+.textboxstyle {
+    padding: 20px;
+}
+
