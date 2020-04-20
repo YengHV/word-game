@@ -95,16 +95,13 @@ function wordCheck() {
     //
     if (currentWord) {
       return addToCorrectWord();
-      //  validWord();
-      
+      //  validWord(); 
     }
 
   }).catch(function (error) {
     return alert("Sorry, " + str + " not in this dictionary.");
   })
-  // .then(addToCorrectWord());
-
-  
+  // .then(addToCorrectWord()); 
 }
 
 function addToCorrectWord(){
@@ -139,19 +136,26 @@ function postScore(){
   scoreDiv.append(score)
 
   console.log("done")
-  
-  // $.post('/api/score', checklistArr.length)
-  // .then(response => {
-  //   console.log(response)
-  //    req.body = {
-  //      score: scoreCount,
-  //      LettersetId: 1,
-  //      UserId: 1
-  //    }
-  //   db.Score.create(req.body)
-  //   window.location = "/done"
-  // })
-  // .catch(error => console.log(error))
+
+  const newScoreObj = {
+    score: scoreCount,
+    LettersetId: 1,
+    UserId: 2
+  }
+
+  $.post('/api/score', newScoreObj)
+  .then(response => {
+    console.log(response);
+    console.log(scoreCount);
+    //  req.body = {
+    //    score: scoreCount,
+    //    LettersetId: 1,
+    //    UserId: 2
+    // }
+    db.Score.create(req.body);
+    //window.location = "/done"
+  })
+  .catch(error => console.log(error))
  };
 // array length will be the score count
 // post score number will set score for user in our database 
