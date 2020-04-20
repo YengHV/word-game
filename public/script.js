@@ -13,6 +13,8 @@ $(document).ready(function () {
 
   $("#blastro").on("click", function () {
     $("#currentLetterset").empty();
+    $("#list").empty();
+    $("#charDiv").empty();
     var lettersetOne = $("#currentLetterset");
     var lettersetDiv = $("<span>").text("blastro");
     // var btnId = "btnId" + 0;
@@ -27,13 +29,71 @@ $(document).ready(function () {
       var charBtn = $("<button>").attr("id", "btnId" + arrBlastro).attr("type", "button").attr("class", "btn btn-secondary").text(arrBlastro);
       $(charDiv).append(charBtn);
 
-      createWordGuess();
-      function createWordGuess() {
-        $("#btnId" + arrBlastro[i]).on("click", function () {
-          console.log("#btnId" + arrBlastro);
-        })
-      }
+      // createWordGuess();
+      // function createWordGuess() {
+      //   $("#btnIdb").on("click", function () {
+      //     console.log("#btnIdb");
+      //     var strB = $("b");
+      //     var textBtnChar = $("#wordguess")
+      //     $(textBtnChar).append(strB);
+      //   })
+      //   $("#btnIdl").on("click", function () {
+      //     console.log("#btnIdl");
+      //   })
+      //   $("#btnIda").on("click", function () {
+      //     console.log("#btnIda");
+      //   })
+      //   $("#btnIds").on("click", function () {
+      //     console.log("#btnIds");
+      //   })
+      //   $("#btnIdt").on("click", function () {
+      //     console.log("#btnIdt");
+      //   })
+      //   $("#btnIdr").on("click", function () {
+      //     console.log("#btnIdr");
+      //   })
+      //   $("#btnIdo").on("click", function () {
+      //     console.log("#btnIdo");
+      //   })
+
+      // }
     }
+    createWordGuess();
+      function createWordGuess() {
+
+
+        $("#btnIdb").on("click", function () {
+          console.log("#btnIdb");
+          // var strB = $("b");
+          // var textDiv = $("#wordguess");
+          $("#wordguess").append("b");
+        })
+        $("#btnIdl").on("click", function () {
+          console.log("#btnIdl");
+          $("#wordguess").append("l");
+        })
+        $("#btnIda").on("click", function () {
+          console.log("#btnIda");
+          $("#wordguess").append("a");
+        })
+        $("#btnIds").on("click", function () {
+          console.log("#btnIds");
+          $("#wordguess").append("s");
+        })
+        $("#btnIdt").on("click", function () {
+          console.log("#btnIdt");
+          $("#wordguess").append("t");
+        })
+        $("#btnIdr").on("click", function () {
+          console.log("#btnIdr");
+          $("#wordguess").append("r");
+        })
+        $("#btnIdo").on("click", function () {
+          console.log("#btnIdo");
+          $("#wordguess").append("o");
+        })
+
+      }
   });
 
   $("#doneBtn").on("click", function () {
@@ -65,6 +125,7 @@ function wordCheck() {
   }).catch(function (error) {
     return alert("Sorry, " + str + " not in this dictionary.");
   })
+
   
 }
 
