@@ -24,10 +24,15 @@
 
 ul {
     text-align: center;
-    display: inline-block;
+    /* display: inline-block; */
     /* text-align: left; */
-    /* list-style-type: none; */
+    list-style-type: none;
     /* list-style: inside; */
+   
+}
+
+li {
+    text-align: center;
 }
 
 .textboxstyle {
