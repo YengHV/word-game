@@ -2,12 +2,14 @@
 // const apikey = process.env.API_KEY;
 // var str = "";
 // var arrBlastro = [];
+var checklistArr = [];
 
 $(document).ready(function () {
   $("#submitBtn").on("click", function () {
     str = $("#wordguess").val();
     console.log(str);
-    addToCorrectWord();
+    alreadyFound();
+    // addToCorrectWord();
     wordCheck();
     $("#wordguess").empty();
   })
@@ -27,7 +29,6 @@ $(document).ready(function () {
     $("#charDiv").empty();
     var lettersetOne = $("#currentLetterset");
     var lettersetDiv = $("<span>").text("blastro");
-    // var btnId = "btnId" + 0;
     $(lettersetOne).append(lettersetDiv);
     // dynamically create Bootstrap buttons using jQuery
     // iterate around the letterset
@@ -117,4 +118,16 @@ function addToCorrectWord(){
   var ul = $("#list");
   var li = $("<li>").text(str);
   $(ul).append(li);
+};
+
+function alreadyFound(){
+//every time you submit a word you check checklistArr the array
+if (checklistArr.includes(str) === false) {
+checklistArr.push(str);
+console.log(checklistArr.includes(str));
+addToCorrectWord();
+} else {
+  return alert("Already found");
+};
+
 };
