@@ -94,7 +94,7 @@ function wordCheck() {
     // create .includes function to match the letterset to currentword
     //
     if (currentWord) {
-      return alert("Correct!");
+      return addToCorrectWord();
       //  validWord();
       
     }
@@ -102,6 +102,7 @@ function wordCheck() {
   }).catch(function (error) {
     return alert("Sorry, " + str + " not in this dictionary.");
   })
+  // .then(addToCorrectWord());
 
   
 }
@@ -110,6 +111,7 @@ function addToCorrectWord(){
   var ul = $("#list");
   var li = $("<li>").text(str);
   $(ul).append(li);
+  alert("Correct!")
 };
 
 function notFound(){
@@ -117,8 +119,9 @@ function notFound(){
 if (checklistArr.includes(str) === false) {
 checklistArr.push(str);
 console.log(checklistArr);
-addToCorrectWord();
+// addToCorrectWord();
 wordCheck();
+// addToCorrectWord();
 
 } else {
   return alert("Already found");
@@ -127,25 +130,28 @@ wordCheck();
 };
 
 function postScore(){
+  $("#currentScore").empty();
+  $("#list").empty();
   var scoreCount = checklistArr.length;
   var scoreDiv = $("#currentScore")
   var score = $("<span>").text(scoreCount);
 
   scoreDiv.append(score)
+
   console.log("done")
   
-//   $.post('/api/score', checklistArr.length)
-//   .then(response => {
-//     console.log(response)
-//      req.body = {
-//        score: 10,
-//        LettersetId: 1,
-//        UserId: 1
-//      }
-//     db.Score.create(req.body)
-//     window.location = "/done"
-//   })
-//   .catch(error => console.log(error))
+  // $.post('/api/score', checklistArr.length)
+  // .then(response => {
+  //   console.log(response)
+  //    req.body = {
+  //      score: scoreCount,
+  //      LettersetId: 1,
+  //      UserId: 1
+  //    }
+  //   db.Score.create(req.body)
+  //   window.location = "/done"
+  // })
+  // .catch(error => console.log(error))
  };
 // array length will be the score count
 // post score number will set score for user in our database 
