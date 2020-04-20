@@ -31,9 +31,15 @@ router.get("/signup", function(req, res) {
   res.sendFile(path.join(__dirname, "../public/signUp.html"));
 });
 
+router.get("/done", function(req, res) {
+  // Route to done html.
+  // when user click on done button
+  res.sendFile(path.join(__dirname, "../public/done.html"));
+});
+
 // Here we've add our isAuthenticated middleware to this route.
 // If a user who is not logged in tries to access this route they will be redirected to the signup page
-router.get("/login", isAuthenticated, function(req, res) {
+router.get("/index", isAuthenticated, function(req, res) {
   res.sendFile(path.join(__dirname, "../public/signUp.html"));
 });
 
