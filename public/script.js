@@ -20,7 +20,8 @@ $(document).ready(function () {
 
   $("#doneBtn").on("click", function () {
     //TODO: change for heroku deployment
-    location.href = "http://localhost:8080/done";
+    // location.href = "http://localhost:8080/done";
+    postScore();
   });
 
   $("#blastro").on("click", function () {
@@ -124,10 +125,30 @@ function alreadyFound(){
 //every time you submit a word you check checklistArr the array
 if (checklistArr.includes(str) === false) {
 checklistArr.push(str);
-console.log(checklistArr.includes(str));
+console.log(checklistArr);
 addToCorrectWord();
 } else {
   return alert("Already found");
 };
 
 };
+
+function postScore(){
+  $.post('/api/score', checklistArr.length)
+  .then(response => {
+    console.log(response)
+     req.body = {
+       score: 10,
+       LettersetId: 1,
+       UserId: 1
+     }
+    db.Score.create(req.body)
+    window.location = "/done"
+  })
+  .catch(error => console.log(error))
+};
+// array length will be the score count
+// post score number will set score for user in our database 
+// on click "done" will render the done page
+// get score from database to render data on page
+// .get Email, Score, and letterset.
