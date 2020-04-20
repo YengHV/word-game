@@ -9,7 +9,17 @@ $(document).ready(function () {
     console.log(str);
     addToCorrectWord();
     wordCheck();
+    $("#wordguess").empty();
   })
+
+  $("#clearBtn").on("click", function () {
+    $("#wordguess").empty();
+  })
+
+  $("#doneBtn").on("click", function () {
+    //TODO: change for heroku deployment
+    location.href = "http://localhost:8080/done";
+  });
 
   $("#blastro").on("click", function () {
     $("#currentLetterset").empty();
@@ -29,34 +39,6 @@ $(document).ready(function () {
       var charBtn = $("<button>").attr("id", "btnId" + arrBlastro).attr("type", "button").attr("class", "btn btn-secondary").text(arrBlastro);
       $(charDiv).append(charBtn);
 
-      // createWordGuess();
-      // function createWordGuess() {
-      //   $("#btnIdb").on("click", function () {
-      //     console.log("#btnIdb");
-      //     var strB = $("b");
-      //     var textBtnChar = $("#wordguess")
-      //     $(textBtnChar).append(strB);
-      //   })
-      //   $("#btnIdl").on("click", function () {
-      //     console.log("#btnIdl");
-      //   })
-      //   $("#btnIda").on("click", function () {
-      //     console.log("#btnIda");
-      //   })
-      //   $("#btnIds").on("click", function () {
-      //     console.log("#btnIds");
-      //   })
-      //   $("#btnIdt").on("click", function () {
-      //     console.log("#btnIdt");
-      //   })
-      //   $("#btnIdr").on("click", function () {
-      //     console.log("#btnIdr");
-      //   })
-      //   $("#btnIdo").on("click", function () {
-      //     console.log("#btnIdo");
-      //   })
-
-      // }
     }
     createWordGuess();
       function createWordGuess() {
@@ -64,8 +46,6 @@ $(document).ready(function () {
 
         $("#btnIdb").on("click", function () {
           console.log("#btnIdb");
-          // var strB = $("b");
-          // var textDiv = $("#wordguess");
           $("#wordguess").append("b");
         })
         $("#btnIdl").on("click", function () {
@@ -94,11 +74,6 @@ $(document).ready(function () {
         })
 
       }
-  });
-
-  $("#doneBtn").on("click", function () {
-    //TODO: change for heroku deployment
-    location.href = "http://localhost:8080/done";
   });
 
 
