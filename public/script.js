@@ -8,9 +8,9 @@ $(document).ready(function () {
   $("#submitBtn").on("click", function () {
     str = $("#wordguess").val();
     console.log(str);
-    alreadyFound();
+    notFound();
     // addToCorrectWord();
-    wordCheck();
+    // wordCheck();
     $("#wordguess").empty();
   })
 
@@ -106,27 +106,20 @@ function wordCheck() {
   
 }
 
-/* Function order of execution
-
-function validWord({
-  add currentWord to div
-  display div to wordgame.html using jQuery
-  TODO: dynamically create ul, li list of valid words
-
-*/
-
 function addToCorrectWord(){
   var ul = $("#list");
   var li = $("<li>").text(str);
   $(ul).append(li);
 };
 
-function alreadyFound(){
+function notFound(){
 //every time you submit a word you check checklistArr the array
 if (checklistArr.includes(str) === false) {
 checklistArr.push(str);
 console.log(checklistArr);
 addToCorrectWord();
+wordCheck();
+
 } else {
   return alert("Already found");
 };
@@ -134,19 +127,26 @@ addToCorrectWord();
 };
 
 function postScore(){
-  $.post('/api/score', checklistArr.length)
-  .then(response => {
-    console.log(response)
-     req.body = {
-       score: 10,
-       LettersetId: 1,
-       UserId: 1
-     }
-    db.Score.create(req.body)
-    window.location = "/done"
-  })
-  .catch(error => console.log(error))
-};
+  var scoreCount = checklistArr.length;
+  var scoreDiv = $("#currentScore")
+  var score = $("<span>").text(scoreCount);
+
+  scoreDiv.append(score)
+  console.log("done")
+  
+//   $.post('/api/score', checklistArr.length)
+//   .then(response => {
+//     console.log(response)
+//      req.body = {
+//        score: 10,
+//        LettersetId: 1,
+//        UserId: 1
+//      }
+//     db.Score.create(req.body)
+//     window.location = "/done"
+//   })
+//   .catch(error => console.log(error))
+ };
 // array length will be the score count
 // post score number will set score for user in our database 
 // on click "done" will render the done page
