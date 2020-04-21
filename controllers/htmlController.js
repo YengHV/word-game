@@ -43,4 +43,8 @@ router.get("/index", isAuthenticated, function(req, res) {
   res.sendFile(path.join(__dirname, "../public/signUp.html"));
 });
 
+router.get("/*", function(req, res){
+  res.redirect("/");
+})
+
 module.exports = router;
