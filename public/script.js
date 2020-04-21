@@ -6,7 +6,7 @@ var checklistArr = [];
 
 $(document).ready(function () {
   $("#submitBtn").on("click", function () {
-    str = $("#wordguess").val();
+    str = $("#wordguess").val().trim();
     console.log(str);
     notFound();
     // addToCorrectWord();
@@ -77,13 +77,11 @@ $(document).ready(function () {
 
       }
   });
-
-
-
   //end of document ready function  
 });
 
 function wordCheck() {
+  console.log("WordCheck" + str);
   //queryURL="https://dictionaryapi.com/api/v3/references/collegiate/json/" + str + "?key=" + apikey
   queryURL = "https://dictionaryapi.com/api/v3/references/collegiate/json/" + str + "?key=fba3eaa7-5e9a-4a87-9890-15a9eb49b6bc";
   $.ajax({
@@ -92,14 +90,16 @@ function wordCheck() {
   }).then(function (response) {
     var currentWord = (response[0].meta.id);
     // create .includes function to match the letterset to currentword
-    //
     if (currentWord) {
-      return addToCorrectWord();
+      checklistArr.push(str);// added here
+      console.log(checklistArr);
+      ////TODO:return 
+      addToCorrectWord();
       //  validWord(); 
     }
 
   }).catch(function (error) {
-    return alert("Sorry, " + str + " not in this dictionary.");
+    return alert("Sorry, the word " + str + " is not in this dictionary.");
   })
   // .then(addToCorrectWord()); 
 }
@@ -108,15 +108,14 @@ function addToCorrectWord(){
   var ul = $("#list");
   var li = $("<li>").text(str);
   $(ul).append(li);
-  alert("Correct!")
+  alert("Correct!");
 };
 
 function notFound(){
 //every time you submit a word you check checklistArr the array
+console.log("In not found function");
 if (checklistArr.includes(str) === false) {
-checklistArr.push(str);
-console.log(checklistArr);
-// addToCorrectWord();
+////TODO: checklistArr.push(str);
 wordCheck();
 // addToCorrectWord();
 
@@ -145,20 +144,9 @@ function postScore(){
 
   $.post('/api/score', newScoreObj)
   .then(response => {
-    console.log(response);
-    console.log(scoreCount);
-    //  req.body = {
-    //    score: scoreCount,
-    //    LettersetId: 1,
-    //    UserId: 2
-    // }
-    db.Score.create(req.body);
+
+     db.Score.create(req.body);
     //window.location = "/done"
   })
   .catch(error => console.log(error))
- };
-// array length will be the score count
-// post score number will set score for user in our database 
-// on click "done" will render the done page
-// get score from database to render data on page
-// .get Email, Score, and letterset.
+};
