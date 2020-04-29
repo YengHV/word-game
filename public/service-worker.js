@@ -1,4 +1,22 @@
-const FILES_TO_CACHE = ["/", "/index.html", "app.js", "favicon.ico"];
+const FILES_TO_CACHE = [
+  "/",
+  "/index.html",
+  "/wordgame.html",
+  "/signUp.html",
+  "/style.css",
+  "/js/login.js",
+  "/js/signup.js",
+  "/script.js",
+  "/manifest.webmanifest",
+  "/assets/images/icon-72x72.png",
+  "/assets/images/icon-96x96.png",
+  "/assets/images/icon-128x128.png",
+  "/assets/images/icon-144x144.png",
+  "/assets/images/icon-152x152.png",
+  "/assets/images/icon-192x192.png",
+  "/assets/images/icon-384x384.png",
+  "/assets/images/icon-512x512.png", 
+];
 
 const CACHE_NAME = "static-cache-v2";
 const DATA_CACHE_NAME = "data-cache-v1";
