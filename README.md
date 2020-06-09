@@ -1,6 +1,6 @@
 # Word Game
 
-## Overview
+## Description
 
 In each game, Word Game displays seven letters. It’s up to you to find as many words as you can, using only those seven letters. You score a point for each word you find.
 
