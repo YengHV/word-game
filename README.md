@@ -44,6 +44,9 @@ Player is presented with a Welcome Screen describing game play, as follows:
 Welcome to Word Game. Click (or tap) the Choose Letterset drop down list and pick the letterset you want to play. The letterset you have chosen will appear as buttons. Click on the letters in order, to spell a word, then press the Submit Word button. If your word is in Merriam-Webster Collegiate Dictionary, it will display in the Correct Word list and a point is added to your score.
 
 ## Game Play
+
+![wordgame](https://user-images.githubusercontent.com/61241205/89743173-0eeaa700-da66-11ea-8a49-d43b7ed84025.png)
+
 Words must be at least four letters long. You may use letters more than once. Example: For letterset “blastro”, valid words include last, blast, blasts, lasts, albatross, sort, sorts, stars, toss, bass, etc. Invalid words include tross (not in dictionary) and floss (uses letters not in the letterset).
 When you can no longer find new words using that letterset, click the Done button and your score for that letterset is displayed.
 
